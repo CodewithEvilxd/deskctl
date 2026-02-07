@@ -64,6 +64,8 @@ pub fn get_cpu_speed_ghz() -> f64 {
 }
 
 pub fn get_memory_slots() -> usize {
+    let mut slots = 0;
+
     #[cfg(target_os = "windows")]
     {
         // wmic memorychip get Capacity
@@ -88,15 +90,15 @@ pub fn get_memory_slots() -> usize {
                 }
             }
             if count > 0 {
-                return count;
+                slots = count;
             }
         }
     }
 
     #[cfg(any(target_os = "macos", unix))]
     {
-        return 1;
+        slots = 1;
     }
 
-    0
+    slots
 }
