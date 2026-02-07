@@ -122,7 +122,7 @@ jobs:
         shell: bash
 
       - name: Install frontend dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Tauri App
         uses: tauri-apps/tauri-action@v0
