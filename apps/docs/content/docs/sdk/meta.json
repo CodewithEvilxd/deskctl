@@ -1,0 +1,21 @@
+{
+  "title": "React SDK",
+  "description": "The headless library",
+  "icon": "Package",
+  "root": true,
+  "pages": [
+    "---Introduction---",
+    "index",
+    "getting-started",
+    "---Bridges---",
+    "bridges",
+    "custom-persistence",
+    "---Hooks---",
+    "...hooks",
+    "---Low-level---",
+    "client",
+    "utils",
+    "---",
+    "changelog"
+  ]
+}

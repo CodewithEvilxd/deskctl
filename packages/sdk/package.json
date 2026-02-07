@@ -1,0 +1,66 @@
+{
+  "name": "@deskctl/sdk",
+  "version": "0.1.1",
+  "description": "SDK for Deskctl Bridge devices — REST/WebSocket client and React hooks for controlling your PC over the local network.",
+  "type": "module",
+  "license": "MIT",
+  "private": false,
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codewithevilxd/deskctl.git",
+    "directory": "packages/sdk"
+  },
+  "homepage": "https://deskctl.online/docs",
+  "keywords": [
+    "deskctl",
+    "bridge",
+    "sdk",
+    "websocket",
+    "react",
+    "hooks",
+    "local-network",
+    "remote-control"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "prepublishOnly": "pnpm build",
+    "lint": "eslint .",
+    "check-types": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    },
+    "./client": {
+      "types": "./dist/client.d.mts",
+      "import": "./dist/client.mjs"
+    },
+    "./types": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/types.mjs"
+    }
+  },
+  "dependencies": {
+    "zustand": "catalog:"
+  },
+  "devDependencies": {
+    "@deskctl/eslint-config": "workspace:*",
+    "@deskctl/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "eslint": "catalog:",
+    "tsdown": "^0.20.1",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "catalog:",
+    "react": "catalog:"
+  }
+}

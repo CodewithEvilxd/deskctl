@@ -1,0 +1,12 @@
+{
+  "extends": "@deskctl/tsconfig/base.json",
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./src/*"],
+      // for shadcn CLI
+      "@deskctl/ui/*": ["../../packages/ui/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

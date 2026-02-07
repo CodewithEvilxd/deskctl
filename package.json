@@ -1,0 +1,40 @@
+{
+  "name": "deskctl",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:bridge": "pnpm --filter=@deskctl/bridge tauri:build",
+    "dev": "turbo run dev --parallel",
+    "dev:web": "turbo run dev --filter=@deskctl/web",
+    "dev:hub": "turbo run dev --filter=@deskctl/hub",
+    "dev:rhub": "turbo run dev --filter=@deskctl/rhub",
+    "dev:docs": "turbo run dev --filter=@deskctl/docs",
+    "dev:bridge": "pnpm --filter=@deskctl/bridge run tauri:dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "check-types": "turbo run check-types",
+    "check": "pnpm format && turbo run lint && turbo run check-types",
+    "prepare": "husky",
+    "deps": "pnpm dlx taze@latest -Ilwr",
+    "deps:major": "pnpm dlx taze@latest major -Ilwr",
+    "ui": "pnpm --filter=@deskctl/ui run ui",
+    "ui:web": "pnpm --filter=@deskctl/web run ui",
+    "ui:hub": "pnpm --filter=@deskctl/hub run ui",
+    "ui:rhub": "pnpm --filter=@deskctl/rhub run ui"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  },
+  "devDependencies": {
+    "husky": "catalog:",
+    "lint-staged": "catalog:",
+    "prettier": "catalog:",
+    "prettier-plugin-organize-imports": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:",
+    "turbo": "catalog:"
+  },
+  "packageManager": "pnpm@10.28.1",
+  "engines": {
+    "node": ">=22"
+  }
+}

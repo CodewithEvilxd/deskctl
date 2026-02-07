@@ -1,0 +1,91 @@
+---
+title: Contributing
+description: Help us make Deskctl Bridge better.
+icon: Heart
+---
+
+First off, thank you for considering contributing to Deskctl Bridge!
+
+## Philosophy
+
+Before you dive in, please keep in mind the project's core philosophy:
+
+- **Simple**: We want to keep the feature set focused.
+- **Lightweight**: Avoid adding heavy dependencies unless absolutely necessary.
+- **Cross-Platform Native**: We prioritize a clean, native experience on both Windows and macOS.
+
+## Getting Started
+
+To work on Deskctl Bridge locally, you'll need:
+
+- **Rust** (latest stable) - Install from [rustup.rs](https://rustup.rs)
+- **Node.js 18+** - For frontend and documentation
+- **pnpm** - Build tool and package manager
+- **Turbo** - Build system (optional but recommended)
+- **Platform-specific tools:**
+  - **Windows**: Visual Studio Build Tools
+  - **macOS**: Xcode Command Line Tools
+
+### Local Development
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/codewithevilxd/deskctl.git
+   cd Deskctl
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Run in development mode:
+
+   You can run all apps simultaneously:
+   ```bash
+   pnpm dev
+   ```
+
+   Or run a specific app:
+   ```bash
+   pnpm dev:bridge # for the desktop app
+   pnpm dev:web    # for the web dashboard
+   ```
+
+4. Build for production:
+   ```bash
+   pnpm build
+   ```
+
+   Or build a specific app:
+   ```bash
+   pnpm build:bridge
+   ```
+
+   This will create platform-specific installers in `apps/bridge/src-tauri/target/release/bundle/`
+
+## Project Structure
+
+This is a monorepo managed by [Turbo](https://turbo.build/) and [pnpm](https://pnpm.io/).
+
+- **apps/**: Contains the main applications (bridge, docs, web, hub, rhub).
+- **packages/**: Shared libraries and UI components.
+- **tooling/**: Build and configuration tools.
+
+## Documentation
+
+The documentation is built with [Fuma Docs](https://fumadocs.dev). To run it locally:
+
+```bash
+pnpm dev:docs
+```
+
+## Pull Requests
+
+- **Small is better**: We prefer small, focused pull requests.
+- **Explain the "Why"**: Include a clear description of the problem your PR solves.
+- **Consistency**: Try to follow the existing code style.
+
+Thank you for being part of the community! 🚀

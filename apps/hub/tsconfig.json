@@ -1,0 +1,12 @@
+{
+  "extends": "@deskctl/tsconfig/base.json",
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./src/*"],
+      "@deskctl/ui/*": ["../../packages/ui/*"],
+      "@deskctl/sdk/*": ["../../packages/sdk/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

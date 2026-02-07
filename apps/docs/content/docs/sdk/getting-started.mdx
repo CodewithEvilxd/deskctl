@@ -1,0 +1,201 @@
+---
+title: Getting Started
+description: Install and configure the SDK in your React app.
+icon: Rocket
+---
+
+## Installation
+
+Install the SDK and its peer dependencies:
+
+<Tabs items={["npm", "pnpm", "yarn", "bun"]}>
+<Tab value="npm">
+```bash
+npm install @deskctl/sdk @tanstack/react-query
+```
+</Tab>
+<Tab value="pnpm">
+```bash
+pnpm add @deskctl/sdk @tanstack/react-query
+```
+</Tab>
+<Tab value="yarn">
+```bash
+yarn add @deskctl/sdk @tanstack/react-query
+```
+</Tab>
+<Tab value="bun">
+```bash
+bun add @deskctl/sdk @tanstack/react-query
+```
+</Tab>
+</Tabs>
+
+## Setup Providers
+
+Wrap your app with the required providers:
+
+```tsx
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BridgesProvider } from "@deskctl/sdk";
+
+const queryClient = new QueryClient();
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <BridgesProvider>{/* Your app */}</BridgesProvider>
+    </QueryClientProvider>
+  );
+}
+```
+
+### Provider Options
+
+```tsx
+import { BridgesProvider, type SdkError } from "@deskctl/sdk";
+import { toast } from "sonner"; // or your toast library
+
+<BridgesProvider
+  autoConnect={true}  // Auto-connect to all saved bridges on mount (default: true)
+  onError={(error: SdkError) => {
+    toast.error(error.message);
+  }}
+>
+```
+
+By default, bridges are persisted to localStorage via Zustand. To use a different storage backend (IndexedDB, SQLite, REST API), see [Custom Storage](/docs/sdk/custom-persistence).
+
+## Adding Your First Bridge
+
+```tsx
+import { useBridges } from "@deskctl/sdk";
+
+function AddBridgeForm() {
+  const { addBridge } = useBridges();
+  const [host, setHost] = useState("");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    const bridgeId = addBridge({
+      name: "My PC",
+      config: {
+        host,
+        port: 9990, // Default port
+        secure: false, // Use wss:// instead of ws://
+        apiKey: undefined, // Optional API key
+      },
+    });
+
+    console.log("Added bridge:", bridgeId);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        value={host}
+        onChange={(e) => setHost(e.target.value)}
+        placeholder="192.168.1.100"
+      />
+      <button type="submit">Add Bridge</button>
+    </form>
+  );
+}
+```
+
+## Using Hooks
+
+Once a bridge is added, use hooks to access its data:
+
+```tsx
+import { useBridge, useSystemStats } from "@deskctl/sdk";
+
+function BridgeStatus({ bridgeId }: { bridgeId: string }) {
+  const bridge = useBridge(bridgeId);
+  const { data, isLoading } = useSystemStats(bridgeId);
+
+  if (!bridge) return <div>Bridge not found</div>;
+
+  if (bridge.status === "connecting") return <div>Connecting...</div>;
+  if (bridge.status === "error") return <div>Connection failed</div>;
+  if (bridge.status === "disconnected") return <div>Disconnected</div>;
+
+  if (isLoading) return <div>Loading stats...</div>;
+
+  return (
+    <div>
+      <h2>{bridge.name}</h2>
+      <p>CPU: {data?.cpu.current_load.toFixed(1)}%</p>
+      <p>RAM: {data?.memory.percent.toFixed(1)}%</p>
+    </div>
+  );
+}
+```
+
+## TypeScript
+
+The SDK is fully typed. Import types as needed:
+
+```tsx
+import type {
+  BridgeConfig,
+  StoredBridge,
+  BridgeConnection,
+  ConnectionStatus,
+  SystemStats,
+  MediaState,
+  Process,
+} from "@deskctl/sdk";
+```
+
+## Error Types
+
+The `onError` callback receives an `SdkError` — a discriminated union you can narrow with the `source` field:
+
+```tsx
+import type { SdkError, BridgeWsError, PersistenceOperationError } from "@deskctl/sdk";
+```
+
+### `BridgeWsError`
+
+Emitted when the bridge server sends an error over WebSocket.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `source` | `"bridge"` | Discriminator |
+| `message` | `string` | Human-readable error message |
+| `code` | `string \| undefined` | Error code (e.g., `"PARSE_ERROR"`) |
+| `bridgeId` | `string` | Which bridge sent the error |
+
+### `PersistenceOperationError`
+
+Emitted when a custom storage operation fails (`add`, `remove`, `update`, or `refresh`). Not emitted for the initial `load()` — use `persistenceStatus` and `persistenceError` from `useBridges()` for that.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `source` | `"persistence"` | Discriminator |
+| `message` | `string` | Error message from the storage layer |
+| `operation` | `"add" \| "remove" \| "update" \| "refresh"` | Which operation failed |
+
+### Example
+
+```tsx
+<BridgesProvider
+  onError={(error) => {
+    switch (error.source) {
+      case "bridge":
+        toast.error(`[${error.bridgeId}] ${error.code}: ${error.message}`);
+        break;
+      case "persistence":
+        toast.error(`Storage ${error.operation} failed: ${error.message}`);
+        break;
+    }
+  }}
+>
+```
+
+## Next Steps
+
+- [Managing Bridges](/docs/sdk/bridges) - Add, remove, update bridges
+- [Hooks Reference](/docs/sdk/hooks) - All available hooks
