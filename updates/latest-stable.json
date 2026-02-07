@@ -1,0 +1,31 @@
+{
+  "version": "1.0.8",
+  "notes": "",
+  "pub_date": "2026-02-07T17:15:41.558Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRRWtYTEtNMDZXMyt2SUZjblVIS1VEMis4VnZoNS9xNVczaE9oNkZBYUNrcFczZWJuMC9LQzVRYnI5eFJZU3U4a0J6enhjcWQyYklGV3BPSEFpNy9LYXJIb1VvaTgrNkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwNDgzNzgyCWZpbGU6RGVza2N0bCBCcmlkZ2UuYXBwLnRhci5negpRc3JyZExyaytndjlhYWhtTkJXNzU0bUtJMzd4cjZ0QVN6RWhYL1B6dldGeXpZWmhKQ1V3N3hDNGhXdFN4YWo2Rko1d2VRL0dZTUxLNjkvbWdHRC9DZz09Cg==",
+      "url": "https://github.com/CodewithEvilxd/deskctl/releases/download/bridge-v1.0.8/Deskctl.Bridge_aarch64.app.tar.gz"
+    },
+    "darwin-aarch64-app": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRRWtYTEtNMDZXMyt2SUZjblVIS1VEMis4VnZoNS9xNVczaE9oNkZBYUNrcFczZWJuMC9LQzVRYnI5eFJZU3U4a0J6enhjcWQyYklGV3BPSEFpNy9LYXJIb1VvaTgrNkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwNDgzNzgyCWZpbGU6RGVza2N0bCBCcmlkZ2UuYXBwLnRhci5negpRc3JyZExyaytndjlhYWhtTkJXNzU0bUtJMzd4cjZ0QVN6RWhYL1B6dldGeXpZWmhKQ1V3N3hDNGhXdFN4YWo2Rko1d2VRL0dZTUxLNjkvbWdHRC9DZz09Cg==",
+      "url": "https://github.com/CodewithEvilxd/deskctl/releases/download/bridge-v1.0.8/Deskctl.Bridge_aarch64.app.tar.gz"
+    },
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRRWtYTEtNMDZXM3p2TTYwKzFTcUE4bUNUVmRCTENGbDljWmlGWS9yUlZDZWcrS0NTL09ZU21PUEdHTkYxdlNuSGxqWHdHbjk2bTNvN29yb1J3WmhLRXVINExydkZKb3dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwNDgzOTY4CWZpbGU6RGVza2N0bCBCcmlkZ2UuYXBwLnRhci5negp3TEJRU2tiNkZyNTdJSktuUzBsZ3lYVW9WT2ZVTEVKUmpFMDhFcS9sOU1hL0VEVkRhR00zRm5QMHlRTnBwcFF4bHlCY053M3llUGhoT2IzWjVGMTNEUT09Cg==",
+      "url": "https://github.com/CodewithEvilxd/deskctl/releases/download/bridge-v1.0.8/Deskctl.Bridge_x64.app.tar.gz"
+    },
+    "darwin-x86_64-app": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRRWtYTEtNMDZXM3p2TTYwKzFTcUE4bUNUVmRCTENGbDljWmlGWS9yUlZDZWcrS0NTL09ZU21PUEdHTkYxdlNuSGxqWHdHbjk2bTNvN29yb1J3WmhLRXVINExydkZKb3dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwNDgzOTY4CWZpbGU6RGVza2N0bCBCcmlkZ2UuYXBwLnRhci5negp3TEJRU2tiNkZyNTdJSktuUzBsZ3lYVW9WT2ZVTEVKUmpFMDhFcS9sOU1hL0VEVkRhR00zRm5QMHlRTnBwcFF4bHlCY053M3llUGhoT2IzWjVGMTNEUT09Cg==",
+      "url": "https://github.com/CodewithEvilxd/deskctl/releases/download/bridge-v1.0.8/Deskctl.Bridge_x64.app.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRRWtYTEtNMDZXMzVRTW1wRTB1ODlzTHlWaHkzUWpDMWdQekM5N0wzeDNDZGdBb2s0OEZmaWNodWMyRmRiMEpEaFgwcUdyWjh5USt6bXdmazhBa0FEQTc2Q2xnOE0wOXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwNDg0NTM5CWZpbGU6RGVza2N0bCBCcmlkZ2VfMS4wLjhfeDY0LXNldHVwLmV4ZQp2cVRpY051TUZMazU3MXpmY0xrNml3Q3AydXhzSWdGY0dLdDFXSXVqdTJySHdTM3pkUEFqYXptdFIxb1ZucnVqTFpCc2sweTNYcktEb2JoMU45bFhDdz09Cg==",
+      "url": "https://github.com/CodewithEvilxd/deskctl/releases/download/bridge-v1.0.8/Deskctl.Bridge_1.0.8_x64-setup.exe"
+    },
+    "windows-x86_64-nsis": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRRWtYTEtNMDZXMzVRTW1wRTB1ODlzTHlWaHkzUWpDMWdQekM5N0wzeDNDZGdBb2s0OEZmaWNodWMyRmRiMEpEaFgwcUdyWjh5USt6bXdmazhBa0FEQTc2Q2xnOE0wOXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwNDg0NTM5CWZpbGU6RGVza2N0bCBCcmlkZ2VfMS4wLjhfeDY0LXNldHVwLmV4ZQp2cVRpY051TUZMazU3MXpmY0xrNml3Q3AydXhzSWdGY0dLdDFXSXVqdTJySHdTM3pkUEFqYXptdFIxb1ZucnVqTFpCc2sweTNYcktEb2JoMU45bFhDdz09Cg==",
+      "url": "https://github.com/CodewithEvilxd/deskctl/releases/download/bridge-v1.0.8/Deskctl.Bridge_1.0.8_x64-setup.exe"
+    }
+  }
+}
